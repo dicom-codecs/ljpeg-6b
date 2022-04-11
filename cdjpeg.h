@@ -150,6 +150,9 @@ EXTERN(boolean) keymatch JPP((char * arg, const char * keyword, int minchars));
 EXTERN(FILE *) read_stdin JPP((void));
 EXTERN(FILE *) write_stdout JPP((void));
 
+EXTERN(boolean) set_simple_lossless (j_compress_ptr cinfo, char *arg);
+
+
 /* miscellaneous useful macros */
 
 #ifdef DONT_USE_B_MODE		/* define mode parameters for fopen() */

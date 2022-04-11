@@ -339,6 +339,15 @@ EXTERN(void) jcopy_sample_rows JPP((JSAMPARRAY input_array, int source_row,
 EXTERN(void) jcopy_block_row JPP((JBLOCKROW input_row, JBLOCKROW output_row,
 				  JDIMENSION num_blocks));
 EXTERN(void) jzero_far JPP((void FAR * target, size_t bytestozero));
+
+/* Missing functions */
+EXTERN(void) jinit_c_codec(j_compress_ptr cinfo);
+EXTERN(void) jinit_c_diff_controller (j_compress_ptr cinfo, boolean need_full_buffer);
+EXTERN(void) jinit_d_codec (j_decompress_ptr cinfo);
+EXTERN(void) jinit_d_diff_controller (j_decompress_ptr cinfo, boolean need_full_buffer);
+EXTERN(void) jinit_lossless_c_codec(j_compress_ptr cinfo);
+EXTERN(void) jinit_lossless_d_codec(j_decompress_ptr cinfo);
+
 /* Constant tables in jutils.c */
 #if 0				/* This table is not actually needed in v6a */
 extern const int jpeg_zigzag_order[]; /* natural coef order to zigzag order */
