@@ -13,15 +13,17 @@
 
 /*
  * Define BITS_IN_JSAMPLE as either
- *   8   for 8-bit sample values (the usual setting)
- *   12  for 12-bit sample values
+ *   8   for 8-bit sample values (the usual setting - lossless only)
+ *   12  for 12-bit sample values (lossless only)
+ *   16  for 16-bit sample values (lossless encoding)
  * Only 8 and 12 are legal data precisions for lossy JPEG according to the
- * JPEG standard, and the IJG code does not support anything else!
+ * JPEG standard.
  * We do not support run-time selection of data precision, sorry.
  */
 
-#define BITS_IN_JSAMPLE  16	/* use 8 or 12 */
-
+#ifndef BITS_IN_JSAMPLE
+#define BITS_IN_JSAMPLE  8	/* use 8, 12 or 16 */
+#endif
 
 /*
  * Maximum number of components (color channels) allowed in JPEG image.
